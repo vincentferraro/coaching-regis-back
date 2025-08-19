@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_component_styles",
+  "info": {
+    "displayName": "style"
+  },
+  "options": {},
+  "attributes": {
+    "colorText": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "component",
+      "component": "component.background-color",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

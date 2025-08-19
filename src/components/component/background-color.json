@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_component_background_colors",
+  "info": {
+    "displayName": "backgroundColor"
+  },
+  "options": {},
+  "attributes": {
+    "hex": {
+      "type": "string"
+    },
+    "rgb": {
+      "type": "json"
+    }
+  },
+  "config": {}
+}

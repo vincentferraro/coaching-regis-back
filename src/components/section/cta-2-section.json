@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_section_cta_2_sections",
+  "info": {
+    "displayName": "CTA2Section"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "component": "component.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

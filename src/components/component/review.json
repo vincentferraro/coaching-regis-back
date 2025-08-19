@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_component_reviews",
+  "info": {
+    "displayName": "review"
+  },
+  "options": {},
+  "attributes": {
+    "user": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

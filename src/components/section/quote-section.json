@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_section_quote_sections",
+  "info": {
+    "displayName": "quoteSection"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

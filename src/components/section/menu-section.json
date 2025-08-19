@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_menu_sections",
+  "info": {
+    "displayName": "menuSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "component": "component.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

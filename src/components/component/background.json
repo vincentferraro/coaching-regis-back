@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_component_backgrounds",
+  "info": {
+    "displayName": "background"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "video"
+      ]
+    },
+    "content": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "videoLink": {
+      "type": "component",
+      "component": "component.video-link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

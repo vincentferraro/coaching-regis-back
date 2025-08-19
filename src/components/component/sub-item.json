@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_component_sub_items",
+  "info": {
+    "displayName": "subItem"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

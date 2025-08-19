@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_component_video_links",
+  "info": {
+    "displayName": "videoLink"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "enumeration",
+      "enum": [
+        "/videos/mountain_hiking.mp4",
+        "/videos/surfing.mp4"
+      ]
+    }
+  },
+  "config": {}
+}

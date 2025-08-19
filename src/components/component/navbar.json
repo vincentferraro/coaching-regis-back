@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_component_navbars",
+  "info": {
+    "displayName": "navItem"
+  },
+  "options": {},
+  "attributes": {
+    "href": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "subItem": {
+      "type": "component",
+      "component": "component.sub-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

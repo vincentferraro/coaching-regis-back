@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_section_review_sections",
+  "info": {
+    "displayName": "ReviewSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "review": {
+      "type": "component",
+      "component": "component.review",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_section_headers",
+  "info": {
+    "displayName": "header"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "navItem": {
+      "type": "component",
+      "component": "component.navbar",
+      "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "component.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

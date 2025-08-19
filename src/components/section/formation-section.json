@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_section_formation_sections",
+  "info": {
+    "displayName": "formationSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "component": "component.button",
+      "repeatable": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_section_hero_sections",
+  "info": {
+    "displayName": "HeroSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "component": "component.button",
+      "repeatable": false
+    },
+    "video": {
+      "type": "component",
+      "component": "component.video-link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

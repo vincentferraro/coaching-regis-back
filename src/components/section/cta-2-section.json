@@ -4,15 +4,6 @@
     "displayName": "CTA2Section"
   },
   "options": {},
-  "attributes": {
-    "text": {
-      "type": "string"
-    },
-    "button": {
-      "type": "component",
-      "component": "component.button",
-      "repeatable": false
-    }
-  },
+  "attributes": {},
   "config": {}
 }

@@ -7,8 +7,19 @@ export interface ComponentBackground extends Struct.ComponentSchema {
   };
   attributes: {
     content: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.Enumeration<
+      [
+        '/videos/mountain_hiking.mp4',
+        '/videos/surfing.mp4',
+        '/videos/men_ready_kampus_production.mp4',
+        '/videos/women_climbing_mountain_yaroslav_shuraev.mp4',
+        '/videos/women_runing_igor_vieira.mp4',
+        '/videos/women_training_pressmaster.mp4',
+        '/videos/women_walking_road_coverr.mp4',
+        '/videos/men_walking_through_forest_peter_fowler.mp4',
+      ]
+    >;
     type: Schema.Attribute.Enumeration<['image', 'video']>;
-    videoLink: Schema.Attribute.Component<'component.video-link', false>;
   };
 }
 
@@ -53,8 +64,8 @@ export interface ComponentNavbar extends Struct.ComponentSchema {
   };
   attributes: {
     href: Schema.Attribute.String;
+    label: Schema.Attribute.String;
     subItem: Schema.Attribute.Component<'component.sub-item', true>;
-    text: Schema.Attribute.String;
   };
 }
 
@@ -66,6 +77,16 @@ export interface ComponentQuestion extends Struct.ComponentSchema {
   attributes: {
     answer: Schema.Attribute.Text;
     question: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentQuote extends Struct.ComponentSchema {
+  collectionName: 'components_component_quotes';
+  info: {
+    displayName: 'Quote';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
   };
 }
 
@@ -128,7 +149,16 @@ export interface ComponentVideoLink extends Struct.ComponentSchema {
   };
   attributes: {
     link: Schema.Attribute.Enumeration<
-      ['/videos/mountain_hiking.mp4', '/videos/surfing.mp4']
+      [
+        '/videos/mountain_hiking.mp4',
+        '/videos/surfing.mp4',
+        '/videos/men_ready_kampus_production.mp4',
+        '/videos/women_climbing_mountain_yaroslav_shuraev.mp4',
+        '/videos/women_runing_igor_vieira.mp4',
+        '/videos/women_training_pressmaster.mp4',
+        '/videos/women_walking_road_coverr.mp4',
+        '/videos/men_walking_through_forest_peter_fowler.mp4',
+      ]
     >;
   };
 }
@@ -163,10 +193,7 @@ export interface SectionCta2Section extends Struct.ComponentSchema {
   info: {
     displayName: 'CTA2Section';
   };
-  attributes: {
-    button: Schema.Attribute.Component<'component.button', false>;
-    text: Schema.Attribute.String;
-  };
+  attributes: {};
 }
 
 export interface SectionCtaSection extends Struct.ComponentSchema {
@@ -246,12 +273,24 @@ export interface SectionHeroSection extends Struct.ComponentSchema {
 export interface SectionMenuSection extends Struct.ComponentSchema {
   collectionName: 'components_section_menu_sections';
   info: {
-    displayName: 'menuSection';
+    displayName: 'menu';
   };
   attributes: {
-    button: Schema.Attribute.Component<'component.button', false>;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    buttonHref: Schema.Attribute.String;
+    buttonLabel: Schema.Attribute.String;
+    imageAlternativeText: Schema.Attribute.Text;
+    imageUrl: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionMenuSection2 extends Struct.ComponentSchema {
+  collectionName: 'components_section_menu_section2s';
+  info: {
+    displayName: 'MenuSection2';
+  };
+  attributes: {
+    menu: Schema.Attribute.Component<'section.menu-section', true>;
   };
 }
 
@@ -261,14 +300,14 @@ export interface SectionQuoteSection extends Struct.ComponentSchema {
     displayName: 'quoteSection';
   };
   attributes: {
-    quote: Schema.Attribute.String;
+    quote: Schema.Attribute.Component<'component.quote', true>;
   };
 }
 
 export interface SectionReviewSection extends Struct.ComponentSchema {
   collectionName: 'components_section_review_sections';
   info: {
-    displayName: 'ReviewSection';
+    displayName: 'Reviews';
   };
   attributes: {
     review: Schema.Attribute.Component<'component.review', true>;
@@ -283,6 +322,7 @@ export interface SectionTextImageSection extends Struct.ComponentSchema {
   };
   attributes: {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    reverse: Schema.Attribute.Boolean;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
@@ -297,6 +337,7 @@ declare module '@strapi/strapi' {
       'component.feature': ComponentFeature;
       'component.navbar': ComponentNavbar;
       'component.question': ComponentQuestion;
+      'component.quote': ComponentQuote;
       'component.review': ComponentReview;
       'component.seo': ComponentSeo;
       'component.style': ComponentStyle;
@@ -312,6 +353,7 @@ declare module '@strapi/strapi' {
       'section.header': SectionHeader;
       'section.hero-section': SectionHeroSection;
       'section.menu-section': SectionMenuSection;
+      'section.menu-section2': SectionMenuSection2;
       'section.quote-section': SectionQuoteSection;
       'section.review-section': SectionReviewSection;
       'section.text-image-section': SectionTextImageSection;

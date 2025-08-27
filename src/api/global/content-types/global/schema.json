@@ -15,76 +15,6 @@
     }
   },
   "attributes": {
-    "hero": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.hero-section",
-      "repeatable": false
-    },
-    "quoteSection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.quote-section",
-      "repeatable": true
-    },
-    "aboutSection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.about-section",
-      "repeatable": false
-    },
-    "menu": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.menu-section",
-      "repeatable": true
-    },
-    "formationSection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.formation-section",
-      "repeatable": false
-    },
-    "reviewSection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.review-section",
-      "repeatable": false
-    },
-    "CTASection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.cta-section",
-      "repeatable": false
-    },
     "seo": {
       "type": "component",
       "pluginOptions": {
@@ -94,6 +24,23 @@
       },
       "component": "component.seo",
       "repeatable": false
+    },
+    "block": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "section.review-section",
+        "section.quote-section",
+        "section.hero-section",
+        "section.formation-section",
+        "section.about-section",
+        "section.cta-section",
+        "section.menu-section2"
+      ]
     }
   }
 }

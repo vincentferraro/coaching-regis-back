@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_menu_section2s",
+  "info": {
+    "displayName": "MenuSection2"
+  },
+  "options": {},
+  "attributes": {
+    "menu": {
+      "type": "component",
+      "component": "section.menu-section",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -6,7 +6,9 @@
   "options": {},
   "attributes": {
     "quote": {
-      "type": "string"
+      "type": "component",
+      "component": "component.quote",
+      "repeatable": true
     }
   },
   "config": {}

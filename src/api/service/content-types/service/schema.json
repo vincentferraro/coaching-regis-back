@@ -43,75 +43,23 @@
         }
       }
     },
-    "hero": {
-      "type": "component",
+    "block": {
+      "type": "dynamiczone",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "section.hero-section",
-      "repeatable": false
-    },
-    "quote": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.quote-section",
-      "repeatable": false
-    },
-    "textImageSection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.text-image-section",
-      "repeatable": true
-    },
-    "featuresSection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.feature-section",
-      "repeatable": false
-    },
-    "CTA2Section": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.cta-2-section",
-      "repeatable": false
-    },
-    "CTASection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.cta-section",
-      "repeatable": false
-    },
-    "FAQ": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "section.faq-section",
-      "repeatable": false
+      "components": [
+        "section.text-image-section",
+        "section.feature-section",
+        "section.faq-section",
+        "section.cta-2-section",
+        "section.cta-section",
+        "section.quote-section",
+        "section.hero-section",
+        "component.quote"
+      ]
     }
   }
 }

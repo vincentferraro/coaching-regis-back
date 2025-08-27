@@ -15,14 +15,32 @@
     }
   },
   "attributes": {
-    "header": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "navItem": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "section.header",
+      "component": "component.navbar",
+      "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.button",
       "repeatable": false
     }
   }

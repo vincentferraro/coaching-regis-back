@@ -22,10 +22,18 @@
         "audios"
       ]
     },
-    "videoLink": {
-      "type": "component",
-      "component": "component.video-link",
-      "repeatable": false
+    "link": {
+      "type": "enumeration",
+      "enum": [
+        "/videos/mountain_hiking.mp4",
+        "/videos/surfing.mp4",
+        "/videos/men_ready_kampus_production.mp4",
+        "/videos/women_climbing_mountain_yaroslav_shuraev.mp4",
+        "/videos/women_runing_igor_vieira.mp4",
+        "/videos/women_training_pressmaster.mp4",
+        "/videos/women_walking_road_coverr.mp4",
+        "/videos/men_walking_through_forest_peter_fowler.mp4"
+      ]
     }
   },
   "config": {}

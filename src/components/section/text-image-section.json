@@ -20,6 +20,9 @@
         "videos",
         "audios"
       ]
+    },
+    "reverse": {
+      "type": "boolean"
     }
   },
   "config": {}

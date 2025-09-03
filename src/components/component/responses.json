@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_component_responses",
+  "info": {
+    "displayName": "Responses"
+  },
+  "options": {},
+  "attributes": {
+    "answer": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

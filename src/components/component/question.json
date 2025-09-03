@@ -8,8 +8,10 @@
     "question": {
       "type": "string"
     },
-    "answer": {
-      "type": "text"
+    "answers": {
+      "type": "component",
+      "component": "component.responses",
+      "repeatable": true
     }
   },
   "config": {}

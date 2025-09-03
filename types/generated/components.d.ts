@@ -51,7 +51,38 @@ export interface ComponentFeature extends Struct.ComponentSchema {
     displayName: 'feature';
   };
   attributes: {
-    icon: Schema.Attribute.String;
+    icon: Schema.Attribute.Enumeration<
+      [
+        'Psychology',
+        'PsychologyAlt',
+        'ModeStandby',
+        'AddReaction',
+        'BatteryChargingFull',
+        'Campaign',
+        'Cyclone',
+        'Diversity1',
+        'Diversity2',
+        'Diversity3',
+        'FitnessCenter',
+        'FlagCircle',
+        'Handshake',
+        'HotelClass',
+        'Interests',
+        'Looks',
+        'Merge',
+        'OpenWith',
+        'RemoveRedEye',
+        'RocketLaunch',
+        'SentimentVerySatisfied',
+        'Star',
+        'StarBorder',
+        'TheaterComedy',
+        'ThumbUp',
+        'WavingHand',
+        'Workspaces',
+        'WorkspacesOutline',
+      ]
+    >;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
@@ -75,7 +106,7 @@ export interface ComponentQuestion extends Struct.ComponentSchema {
     displayName: 'question';
   };
   attributes: {
-    answer: Schema.Attribute.Text;
+    answers: Schema.Attribute.Component<'component.responses', true>;
     question: Schema.Attribute.String;
   };
 }
@@ -87,6 +118,16 @@ export interface ComponentQuote extends Struct.ComponentSchema {
   };
   attributes: {
     text: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentResponses extends Struct.ComponentSchema {
+  collectionName: 'components_component_responses';
+  info: {
+    displayName: 'Responses';
+  };
+  attributes: {
+    answer: Schema.Attribute.String;
   };
 }
 
@@ -328,6 +369,17 @@ export interface SectionTextImageSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionTextSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_text_sections';
+  info: {
+    displayName: 'textSection';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -338,6 +390,7 @@ declare module '@strapi/strapi' {
       'component.navbar': ComponentNavbar;
       'component.question': ComponentQuestion;
       'component.quote': ComponentQuote;
+      'component.responses': ComponentResponses;
       'component.review': ComponentReview;
       'component.seo': ComponentSeo;
       'component.style': ComponentStyle;
@@ -357,6 +410,7 @@ declare module '@strapi/strapi' {
       'section.quote-section': SectionQuoteSection;
       'section.review-section': SectionReviewSection;
       'section.text-image-section': SectionTextImageSection;
+      'section.text-section': SectionTextSection;
     }
   }
 }

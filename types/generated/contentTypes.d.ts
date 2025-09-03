@@ -373,6 +373,65 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCommencerMaintenantCommencerMaintenant
+  extends Struct.SingleTypeSchema {
+  collectionName: 'commencer_maintenants';
+  info: {
+    displayName: 'commencer-maintenant';
+    pluralName: 'commencer-maintenants';
+    singularName: 'commencer-maintenant';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::commencer-maintenant.commencer-maintenant'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    questions: Schema.Attribute.Component<'component.question', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    legalsPages: Schema.Attribute.Component<'component.sub-item', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    navItem: Schema.Attribute.Component<'component.sub-item', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -480,28 +539,28 @@ export interface ApiPagePage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    carroussel: Schema.Attribute.Component<'section.carroussel-section', false>;
-    citationSection: Schema.Attribute.Component<'section.quote-section', true>;
+    block: Schema.Attribute.DynamicZone<
+      [
+        'section.hero-section',
+        'section.text-image-section',
+        'section.quote-section',
+        'component.quote',
+        'section.feature-section',
+        'section.carroussel-section',
+        'section.cta-section',
+        'section.cta-2-section',
+        'section.faq-section',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    CTASection: Schema.Attribute.Component<'section.cta-section', false>;
-    faqSection: Schema.Attribute.Component<'section.faq-section', false>;
-    featureSection: Schema.Attribute.Component<
-      'section.feature-section',
-      false
-    >;
-    hero: Schema.Attribute.Component<'section.hero-section', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'component.seo', false>;
     style: Schema.Attribute.Component<'component.style', false>;
-    textImageSection: Schema.Attribute.Component<
-      'section.text-image-section',
-      true
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -568,6 +627,47 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTrainingTraining extends Struct.SingleTypeSchema {
+  collectionName: 'trainings';
+  info: {
+    displayName: 'training';
+    pluralName: 'trainings';
+    singularName: 'training';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    block: Schema.Attribute.DynamicZone<
+      [
+        'component.quote',
+        'section.feature-section',
+        'section.cta-section',
+        'section.carroussel-section',
+        'section.quote-section',
+        'section.hero-section',
+        'section.text-image-section',
+        'section.text-section',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::training.training'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'component.seo', false>;
+    style: Schema.Attribute.Component<'component.style', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1083,10 +1183,13 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::commencer-maintenant.commencer-maintenant': ApiCommencerMaintenantCommencerMaintenant;
+      'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::page.page': ApiPagePage;
       'api::service.service': ApiServiceService;
+      'api::training.training': ApiTrainingTraining;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

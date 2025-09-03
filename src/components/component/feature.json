@@ -5,14 +5,44 @@
   },
   "options": {},
   "attributes": {
-    "icon": {
-      "type": "string"
-    },
     "title": {
       "type": "string"
     },
     "text": {
       "type": "text"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Psychology",
+        "PsychologyAlt",
+        "ModeStandby",
+        "AddReaction",
+        "BatteryChargingFull",
+        "Campaign",
+        "Cyclone",
+        "Diversity1",
+        "Diversity2",
+        "Diversity3",
+        "FitnessCenter",
+        "FlagCircle",
+        "Handshake",
+        "HotelClass",
+        "Interests",
+        "Looks",
+        "Merge",
+        "OpenWith",
+        "RemoveRedEye",
+        "RocketLaunch",
+        "SentimentVerySatisfied",
+        "Star",
+        "StarBorder",
+        "TheaterComedy",
+        "ThumbUp",
+        "WavingHand",
+        "Workspaces",
+        "WorkspacesOutline"
+      ]
     }
   },
   "config": {}

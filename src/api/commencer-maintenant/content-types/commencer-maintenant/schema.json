@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "commencer_maintenants",
+  "info": {
+    "singularName": "commencer-maintenant",
+    "pluralName": "commencer-maintenants",
+    "displayName": "commencer-maintenant"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "questions": {
+      "type": "component",
+      "component": "component.question",
+      "repeatable": true
+    }
+  }
+}

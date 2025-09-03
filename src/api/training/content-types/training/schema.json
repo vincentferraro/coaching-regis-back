@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "pages",
+  "collectionName": "trainings",
   "info": {
-    "singularName": "page",
-    "pluralName": "pages",
-    "displayName": "about"
+    "singularName": "training",
+    "pluralName": "trainings",
+    "displayName": "training"
   },
   "options": {
     "draftAndPublish": true
@@ -24,15 +24,14 @@
     "block": {
       "type": "dynamiczone",
       "components": [
-        "section.hero-section",
-        "section.text-image-section",
-        "section.quote-section",
         "component.quote",
         "section.feature-section",
-        "section.carroussel-section",
         "section.cta-section",
-        "section.cta-2-section",
-        "section.faq-section"
+        "section.carroussel-section",
+        "section.quote-section",
+        "section.hero-section",
+        "section.text-image-section",
+        "section.text-section"
       ]
     }
   }

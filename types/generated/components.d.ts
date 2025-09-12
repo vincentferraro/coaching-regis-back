@@ -9,14 +9,19 @@ export interface ComponentBackground extends Struct.ComponentSchema {
     content: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link: Schema.Attribute.Enumeration<
       [
+        '/videos/formation.mp4',
+        '/videos/judoka_artem_podrez.mp4',
+        '/videos/kampus_production_hypnose.mp4',
+        '/videos/meeting_tima_miroshnichenko.mp4',
+        '/videos/men_training_2_tarin_golden.mp4',
+        '/videos/men_training_ketut_subiyanto.mp4',
+        '/videos/men_walking_through_forest_peter_fowler.mp4',
         '/videos/mountain_hiking.mp4',
-        '/videos/surfing.mp4',
-        '/videos/men_ready_kampus_production.mp4',
+        '/videos/psycholog_kampus_production.mp4',
         '/videos/women_climbing_mountain_yaroslav_shuraev.mp4',
         '/videos/women_runing_igor_vieira.mp4',
         '/videos/women_training_pressmaster.mp4',
-        '/videos/women_walking_road_coverr.mp4',
-        '/videos/men_walking_through_forest_peter_fowler.mp4',
+        '/videos/faces_smiling.mp4',
       ]
     >;
     type: Schema.Attribute.Enumeration<['image', 'video']>;
@@ -42,6 +47,17 @@ export interface ComponentButton extends Struct.ComponentSchema {
   attributes: {
     href: Schema.Attribute.String;
     label: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentFaq extends Struct.ComponentSchema {
+  collectionName: 'components_component_faqs';
+  info: {
+    displayName: 'faq';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    question: Schema.Attribute.Text;
   };
 }
 
@@ -108,6 +124,17 @@ export interface ComponentQuestion extends Struct.ComponentSchema {
   attributes: {
     answers: Schema.Attribute.Component<'component.responses', true>;
     question: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentQuestionFaq extends Struct.ComponentSchema {
+  collectionName: 'components_component_question_faqs';
+  info: {
+    displayName: 'questionFAQ';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    question: Schema.Attribute.Text;
   };
 }
 
@@ -183,6 +210,16 @@ export interface ComponentSubItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentTexts extends Struct.ComponentSchema {
+  collectionName: 'components_component_texts';
+  info: {
+    displayName: 'texts';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentVideoLink extends Struct.ComponentSchema {
   collectionName: 'components_component_video_links';
   info: {
@@ -191,14 +228,18 @@ export interface ComponentVideoLink extends Struct.ComponentSchema {
   attributes: {
     link: Schema.Attribute.Enumeration<
       [
+        '/videos/formation.mp4',
+        '/videos/judoka_artem_podrez.mp4',
+        '/videos/kampus_production_hypnose.mp4',
+        '/videos/meeting_tima_miroshnichenko.mp4',
+        '/videos/men_training_2_tarin_golden.mp4',
+        '/videos/men_training_ketut_subiyanto.mp4',
+        '/videos/men_walking_through_forest_peter_fowler.mp4',
         '/videos/mountain_hiking.mp4',
-        '/videos/surfing.mp4',
-        '/videos/men_ready_kampus_production.mp4',
+        '/videos/psycholog_kampus_production.mp4',
         '/videos/women_climbing_mountain_yaroslav_shuraev.mp4',
         '/videos/women_runing_igor_vieira.mp4',
         '/videos/women_training_pressmaster.mp4',
-        '/videos/women_walking_road_coverr.mp4',
-        '/videos/men_walking_through_forest_peter_fowler.mp4',
       ]
     >;
   };
@@ -253,11 +294,12 @@ export interface SectionCtaSection extends Struct.ComponentSchema {
 export interface SectionFaqSection extends Struct.ComponentSchema {
   collectionName: 'components_section_faq_sections';
   info: {
-    displayName: 'faqSection';
+    displayName: 'FAQSection';
   };
   attributes: {
-    question: Schema.Attribute.Component<'component.question', true>;
-    title: Schema.Attribute.String;
+    faq: Schema.Attribute.Component<'component.faq', true>;
+    questionfaq: Schema.Attribute.Component<'component.question-faq', true>;
+    title: Schema.Attribute.Text;
   };
 }
 
@@ -386,15 +428,18 @@ declare module '@strapi/strapi' {
       'component.background': ComponentBackground;
       'component.background-color': ComponentBackgroundColor;
       'component.button': ComponentButton;
+      'component.faq': ComponentFaq;
       'component.feature': ComponentFeature;
       'component.navbar': ComponentNavbar;
       'component.question': ComponentQuestion;
+      'component.question-faq': ComponentQuestionFaq;
       'component.quote': ComponentQuote;
       'component.responses': ComponentResponses;
       'component.review': ComponentReview;
       'component.seo': ComponentSeo;
       'component.style': ComponentStyle;
       'component.sub-item': ComponentSubItem;
+      'component.texts': ComponentTexts;
       'component.video-link': ComponentVideoLink;
       'section.about-section': SectionAboutSection;
       'section.carroussel-section': SectionCarrousselSection;

@@ -528,6 +528,35 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLegalNoticeLegalNotice extends Struct.SingleTypeSchema {
+  collectionName: 'legal_notices';
+  info: {
+    displayName: 'legal-notice';
+    pluralName: 'legal-notices';
+    singularName: 'legal-notice';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::legal-notice.legal-notice'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Struct.SingleTypeSchema {
   collectionName: 'pages';
   info: {
@@ -549,7 +578,6 @@ export interface ApiPagePage extends Struct.SingleTypeSchema {
         'section.carroussel-section',
         'section.cta-section',
         'section.cta-2-section',
-        'section.faq-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -561,6 +589,35 @@ export interface ApiPagePage extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'component.seo', false>;
     style: Schema.Attribute.Component<'component.style', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
+  collectionName: 'privacy_policies';
+  info: {
+    displayName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    singularName: 'privacy-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy.privacy-policy'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    texts: Schema.Attribute.Component<'component.texts', true>;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -587,12 +644,12 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       [
         'section.text-image-section',
         'section.feature-section',
-        'section.faq-section',
         'section.cta-2-section',
         'section.cta-section',
         'section.quote-section',
         'section.hero-section',
         'component.quote',
+        'section.faq-section',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1187,7 +1244,9 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
+      'api::legal-notice.legal-notice': ApiLegalNoticeLegalNotice;
       'api::page.page': ApiPagePage;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::service.service': ApiServiceService;
       'api::training.training': ApiTrainingTraining;
       'plugin::content-releases.release': PluginContentReleasesRelease;

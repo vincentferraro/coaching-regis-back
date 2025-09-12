@@ -1,16 +1,21 @@
 {
   "collectionName": "components_section_faq_sections",
   "info": {
-    "displayName": "faqSection"
+    "displayName": "FAQSection"
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "text"
     },
-    "question": {
+    "questionfaq": {
       "type": "component",
-      "component": "component.question",
+      "component": "component.question-faq",
+      "repeatable": true
+    },
+    "faq": {
+      "type": "component",
+      "component": "component.faq",
       "repeatable": true
     }
   },

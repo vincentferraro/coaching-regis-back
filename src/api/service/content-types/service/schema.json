@@ -53,12 +53,12 @@
       "components": [
         "section.text-image-section",
         "section.feature-section",
-        "section.faq-section",
         "section.cta-2-section",
         "section.cta-section",
         "section.quote-section",
         "section.hero-section",
-        "component.quote"
+        "component.quote",
+        "section.faq-section"
       ]
     }
   }

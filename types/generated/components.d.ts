@@ -216,7 +216,7 @@ export interface ComponentTexts extends Struct.ComponentSchema {
     displayName: 'texts';
   };
   attributes: {
-    text: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
   };
 }
 
@@ -298,7 +298,6 @@ export interface SectionFaqSection extends Struct.ComponentSchema {
   };
   attributes: {
     faq: Schema.Attribute.Component<'component.faq', true>;
-    questionfaq: Schema.Attribute.Component<'component.question-faq', true>;
     title: Schema.Attribute.Text;
   };
 }

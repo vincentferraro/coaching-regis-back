@@ -402,6 +402,36 @@ export interface ApiCommencerMaintenantCommencerMaintenant
   };
 }
 
+export interface ApiCookiePolicyCookiePolicy extends Struct.SingleTypeSchema {
+  collectionName: 'cookie_policies';
+  info: {
+    displayName: 'cookie-policy';
+    pluralName: 'cookie-policies';
+    singularName: 'cookie-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    googleText: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cookie-policy.cookie-policy'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -1241,6 +1271,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::commencer-maintenant.commencer-maintenant': ApiCommencerMaintenantCommencerMaintenant;
+      'api::cookie-policy.cookie-policy': ApiCookiePolicyCookiePolicy;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;

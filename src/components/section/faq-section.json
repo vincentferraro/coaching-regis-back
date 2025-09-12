@@ -8,11 +8,6 @@
     "title": {
       "type": "text"
     },
-    "questionfaq": {
-      "type": "component",
-      "component": "component.question-faq",
-      "repeatable": true
-    },
     "faq": {
       "type": "component",
       "component": "component.faq",

@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "cookie_policies",
+  "collectionName": "forms",
   "info": {
-    "singularName": "cookie-policy",
-    "pluralName": "cookie-policies",
-    "displayName": "cookie-policy"
+    "singularName": "form",
+    "pluralName": "forms",
+    "displayName": "form"
   },
   "options": {
     "draftAndPublish": true
@@ -16,14 +16,6 @@
   },
   "attributes": {
     "title": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "text": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -31,13 +23,20 @@
         }
       }
     },
-    "googleText": {
-      "type": "text",
+    "image": {
+      "type": "media",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

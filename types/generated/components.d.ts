@@ -360,6 +360,7 @@ export interface SectionMenuSection extends Struct.ComponentSchema {
   attributes: {
     buttonHref: Schema.Attribute.String;
     buttonLabel: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     imageAlternativeText: Schema.Attribute.Text;
     imageUrl: Schema.Attribute.Text;
     title: Schema.Attribute.String;

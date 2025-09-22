@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_component_successes",
+  "info": {
+    "displayName": "success"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "buttonLabel": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

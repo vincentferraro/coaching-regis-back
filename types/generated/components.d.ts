@@ -7,21 +7,28 @@ export interface ComponentBackground extends Struct.ComponentSchema {
   };
   attributes: {
     content: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imageUrl: Schema.Attribute.Enumeration<
+      [
+        '/uploads/mountain_fernanda_corso_3830e2634d.jpg',
+        '/uploads/corworking_2_2805e307f8.jpeg',
+        '/uploads/mountain_with_men_b7e8fa8001.jpeg',
+      ]
+    >;
     link: Schema.Attribute.Enumeration<
       [
-        '/videos/formation.mp4',
-        '/videos/judoka_artem_podrez.mp4',
-        '/videos/kampus_production_hypnose.mp4',
-        '/videos/meeting_tima_miroshnichenko.mp4',
-        '/videos/men_training_2_tarin_golden.mp4',
-        '/videos/men_training_ketut_subiyanto.mp4',
-        '/videos/men_walking_through_forest_peter_fowler.mp4',
-        '/videos/mountain_hiking.mp4',
-        '/videos/psycholog_kampus_production.mp4',
-        '/videos/women_climbing_mountain_yaroslav_shuraev.mp4',
-        '/videos/women_runing_igor_vieira.mp4',
-        '/videos/women_training_pressmaster.mp4',
-        '/videos/faces_smiling.mp4',
+        'formation.mp4',
+        'judoka_artem_podrez.mp4',
+        'kampus_production_hypnose.mp4',
+        'meeting_tima_miroshnichenko.mp4',
+        'men_training_2_tarin_golden.mp4',
+        'men_training_ketut_subiyanto.mp4',
+        'men_walking_through_forest_peter_fowler.mp4',
+        'mountain_hiking.mp4',
+        'psycholog_kampus_production.mp4',
+        'women_climbing_mountain_yaroslav_shuraev.mp4',
+        'women_runing_igor_vieira.mp4',
+        'women_training_pressmaster.mp4',
+        'faces_smiling.mp4',
       ]
     >;
     type: Schema.Attribute.Enumeration<['image', 'video']>;
@@ -97,6 +104,15 @@ export interface ComponentFeature extends Struct.ComponentSchema {
         'WavingHand',
         'Workspaces',
         'WorkspacesOutline',
+        'Autorenew',
+        'Functions',
+        'PersonalInjury',
+        'ThumbDownOffAlt',
+        'SentimentVeryDissatisfied',
+        'CastForEducation',
+        'InterpreterMode',
+        'CorporateFare',
+        'SensorOccupied',
       ]
     >;
     text: Schema.Attribute.Text;
@@ -207,6 +223,18 @@ export interface ComponentSubItem extends Struct.ComponentSchema {
   attributes: {
     href: Schema.Attribute.String;
     label: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentSuccess extends Struct.ComponentSchema {
+  collectionName: 'components_component_successes';
+  info: {
+    displayName: 'success';
+  };
+  attributes: {
+    buttonLabel: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -439,6 +467,7 @@ declare module '@strapi/strapi' {
       'component.seo': ComponentSeo;
       'component.style': ComponentStyle;
       'component.sub-item': ComponentSubItem;
+      'component.success': ComponentSuccess;
       'component.texts': ComponentTexts;
       'component.video-link': ComponentVideoLink;
       'section.about-section': SectionAboutSection;

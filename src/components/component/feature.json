@@ -41,7 +41,16 @@
         "ThumbUp",
         "WavingHand",
         "Workspaces",
-        "WorkspacesOutline"
+        "WorkspacesOutline",
+        "Autorenew",
+        "Functions",
+        "PersonalInjury",
+        "ThumbDownOffAlt",
+        "SentimentVeryDissatisfied",
+        "CastForEducation",
+        "InterpreterMode",
+        "CorporateFare",
+        "SensorOccupied"
       ]
     }
   },

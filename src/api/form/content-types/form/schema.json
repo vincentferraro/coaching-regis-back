@@ -37,6 +37,16 @@
         "videos",
         "audios"
       ]
+    },
+    "success": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "component.success",
+      "repeatable": false
     }
   }
 }

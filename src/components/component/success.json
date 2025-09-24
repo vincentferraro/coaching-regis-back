@@ -13,6 +13,9 @@
     },
     "buttonLabel": {
       "type": "string"
+    },
+    "textContact": {
+      "type": "text"
     }
   },
   "config": {}

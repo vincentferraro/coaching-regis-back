@@ -16,19 +16,19 @@ export interface ComponentBackground extends Struct.ComponentSchema {
     >;
     link: Schema.Attribute.Enumeration<
       [
-        'formation.mp4',
-        'judoka_artem_podrez.mp4',
-        'kampus_production_hypnose.mp4',
-        'meeting_tima_miroshnichenko.mp4',
-        'men_training_2_tarin_golden.mp4',
-        'men_training_ketut_subiyanto.mp4',
-        'men_walking_through_forest_peter_fowler.mp4',
-        'mountain_hiking.mp4',
-        'psycholog_kampus_production.mp4',
-        'women_climbing_mountain_yaroslav_shuraev.mp4',
-        'women_runing_igor_vieira.mp4',
-        'women_training_pressmaster.mp4',
-        'faces_smiling.mp4',
+        '/videos/formation.mp4',
+        '/videos/judoka_artem_podrez.mp4',
+        '/videos/kampus_production_hypnose.mp4',
+        '/videos/meeting_tima_miroshnichenko.mp4',
+        '/videos/men_training_2_tarin_golden.mp4',
+        '/videos/men_training_ketut_subiyanto.mp4',
+        '/videos/men_walking_through_forest_peter_fowler.mp4',
+        '/videos/mountain_hiking.mp4',
+        '/videos/psycholog_kampus_production.mp4',
+        '/videos/women_climbing_mountain_yaroslav_shuraev.mp4',
+        '/videos/women_runing_igor_vieira.mp4',
+        '/videos/women_training_pressmaster.mp4',
+        '/videos/faces_smiling.mp4',
       ]
     >;
     type: Schema.Attribute.Enumeration<['image', 'video']>;
@@ -117,6 +117,23 @@ export interface ComponentFeature extends Struct.ComponentSchema {
     >;
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentFormProps extends Struct.ComponentSchema {
+  collectionName: 'components_component_form_props';
+  info: {
+    displayName: 'formProps';
+  };
+  attributes: {
+    buttonHref: Schema.Attribute.String;
+    buttonLabel: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    firstName: Schema.Attribute.String;
+    isSubmitting: Schema.Attribute.String;
+    lastName: Schema.Attribute.String;
+    message: Schema.Attribute.String;
+    phone: Schema.Attribute.String;
   };
 }
 
@@ -234,6 +251,7 @@ export interface ComponentSuccess extends Struct.ComponentSchema {
   attributes: {
     buttonLabel: Schema.Attribute.String;
     text: Schema.Attribute.String;
+    textContact: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -458,6 +476,7 @@ declare module '@strapi/strapi' {
       'component.button': ComponentButton;
       'component.faq': ComponentFaq;
       'component.feature': ComponentFeature;
+      'component.form-props': ComponentFormProps;
       'component.navbar': ComponentNavbar;
       'component.question': ComponentQuestion;
       'component.question-faq': ComponentQuestionFaq;

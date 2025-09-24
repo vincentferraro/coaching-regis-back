@@ -25,19 +25,19 @@
     "link": {
       "type": "enumeration",
       "enum": [
-        "formation.mp4",
-        "judoka_artem_podrez.mp4",
-        "kampus_production_hypnose.mp4",
-        "meeting_tima_miroshnichenko.mp4",
-        "men_training_2_tarin_golden.mp4",
-        "men_training_ketut_subiyanto.mp4",
-        "men_walking_through_forest_peter_fowler.mp4",
-        "mountain_hiking.mp4",
-        "psycholog_kampus_production.mp4",
-        "women_climbing_mountain_yaroslav_shuraev.mp4",
-        "women_runing_igor_vieira.mp4",
-        "women_training_pressmaster.mp4",
-        "faces_smiling.mp4"
+        "/videos/formation.mp4",
+        "/videos/judoka_artem_podrez.mp4",
+        "/videos/kampus_production_hypnose.mp4",
+        "/videos/meeting_tima_miroshnichenko.mp4",
+        "/videos/men_training_2_tarin_golden.mp4",
+        "/videos/men_training_ketut_subiyanto.mp4",
+        "/videos/men_walking_through_forest_peter_fowler.mp4",
+        "/videos/mountain_hiking.mp4",
+        "/videos/psycholog_kampus_production.mp4",
+        "/videos/women_climbing_mountain_yaroslav_shuraev.mp4",
+        "/videos/women_runing_igor_vieira.mp4",
+        "/videos/women_training_pressmaster.mp4",
+        "/videos/faces_smiling.mp4"
       ]
     },
     "imageUrl": {

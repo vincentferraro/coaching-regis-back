@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "commencer_maintenants",
+  "collectionName": "contacts",
   "info": {
-    "singularName": "commencer-maintenant",
-    "pluralName": "commencer-maintenants",
-    "displayName": "start"
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "contact"
   },
   "options": {
     "draftAndPublish": true
@@ -15,15 +15,13 @@
     }
   },
   "attributes": {
-    "questions": {
-      "type": "component",
+    "title": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "component": "component.question",
-      "repeatable": true
+      }
     },
     "image": {
       "type": "media",

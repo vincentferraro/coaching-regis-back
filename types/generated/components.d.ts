@@ -29,6 +29,7 @@ export interface ComponentBackground extends Struct.ComponentSchema {
         '/videos/women_runing_igor_vieira.mp4',
         '/videos/women_training_pressmaster.mp4',
         '/videos/faces_smiling.mp4',
+        '/videos/reunion2.mp4',
       ]
     >;
     type: Schema.Attribute.Enumeration<['image', 'video']>;
@@ -286,6 +287,7 @@ export interface ComponentVideoLink extends Struct.ComponentSchema {
         '/videos/women_climbing_mountain_yaroslav_shuraev.mp4',
         '/videos/women_runing_igor_vieira.mp4',
         '/videos/women_training_pressmaster.mp4',
+        '/videos/men_ready_kampus_production.mp4',
       ]
     >;
   };
@@ -406,10 +408,25 @@ export interface SectionMenuSection extends Struct.ComponentSchema {
   attributes: {
     buttonHref: Schema.Attribute.String;
     buttonLabel: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    imageAlternativeText: Schema.Attribute.Text;
-    imageUrl: Schema.Attribute.Text;
+    color: Schema.Attribute.String;
     title: Schema.Attribute.String;
+    video: Schema.Attribute.Enumeration<
+      [
+        '/videos/formation.mp4',
+        '/videos/judoka_artem_podrez.mp4',
+        '/videos/kampus_production_hypnose.mp4',
+        '/videos/meeting_tima_miroshnichenko.mp4',
+        '/videos/men_training_2_tarin_golden.mp4',
+        '/videos/men_training_ketut_subiyanto.mp4',
+        '/videos/men_walking_through_forest_peter_fowler.mp4',
+        '/videos/mountain_hiking.mp4',
+        '/videos/psycholog_kampus_production.mp4',
+        '/videos/women_climbing_mountain_yaroslav_shuraev.mp4',
+        '/videos/women_runing_igor_vieira.mp4',
+        '/videos/women_training_pressmaster.mp4',
+        '/videos/men_ready_kampus_production.mp4',
+      ]
+    >;
   };
 }
 

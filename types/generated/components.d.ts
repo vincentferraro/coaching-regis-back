@@ -409,6 +409,7 @@ export interface SectionMenuSection extends Struct.ComponentSchema {
     buttonHref: Schema.Attribute.String;
     buttonLabel: Schema.Attribute.String;
     color: Schema.Attribute.String;
+    imageUrl: Schema.Attribute.String;
     title: Schema.Attribute.String;
     video: Schema.Attribute.Enumeration<
       [
